@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  
+  <head>
+    <title>Untitled</title>
+    <style>
+    #ball {
+    border-radius: 50%;
+      height: 120px;
+      width: 120px;
+      position: absolute;
+      background: cyan;
+      box-shadow: 50px 30px #123456;
+      }
+    border-radius: </style>
+  </head>
+  <body>
+    <div id="ball">
+    </div>
+    <script>
+      let nameObj = "Ball" //global variable string
+      let speed = 1.5; //number global var
+      let moving = true; //boolean global variable
+      let x = 100;
+      let y = 100;
+      let dx = speed;
+      let dy = speed;
+      function moveBall() {
+        if (moving) {
+          x += dx;
+          y += dy;
+          if (x > window.innerWidth - 50 || x < 0) {
+            dx = -dx;
+          }
+          
+          if (y > window.innerHeight - 50 || y < 0) {
+            dy = -dy;
+          }
+          ball.style.left = x + "px";
+          ball.style.top = y + "px";
+        }
+      }
+      
+      function showInfo() {
+        console.log(nameObj, speed, moving);
+      }
+      showInfo();
+      
+      setInterval(moveBall,10);
+    </script>
+  </body>
+</html>
