@@ -4,28 +4,33 @@
   <head>
     <title>Untitled</title>
     <style>
-    #ball {
-    border-radius: 50%;
-      height: 120px;
-      width: 120px;
-      position: absolute;
+    #rhombus {
+    border-radius: 0%;
+      height: 190px;
+      width: 190px;
+      position: relative;
       background: cyan;
-      box-shadow: 50px 30px #123456;
+      box-shadow: 50px 50px #123456;
+      transform: rotate(45deg);
+      }
+      
+      body {
+       background-color: #FAD4C0; 
       }
     border-radius: </style>
   </head>
   <body>
-    <div id="ball">
+    <div id="rhombus">
     </div>
     <script>
-      let nameObj = "Ball" //global variable string
-      let speed = 1.5; //number global var
+      let nameObj = "rhombus" //global variable string
+      let speed = 100; //number global var
       let moving = true; //boolean global variable
-      let x = 100;
-      let y = 100;
+      let x = 700;
+      let y = 200;
       let dx = speed;
       let dy = speed;
-      function moveBall() {
+      function moveShape() {
         if (moving) {
           x += dx;
           y += dy;
@@ -36,8 +41,8 @@
           if (y > window.innerHeight - 50 || y < 0) {
             dy = -dy;
           }
-          ball.style.left = x + "px";
-          ball.style.top = y + "px";
+          rhombus.style.left = x + "px";
+          rhombus.style.top = y + "px";
         }
       }
       
@@ -46,7 +51,7 @@
       }
       showInfo();
       
-      setInterval(moveBall,10);
+      setInterval(moveShape, 1);
     </script>
   </body>
 </html>
